@@ -1,4 +1,3 @@
-
 const Header = (props) => {
   // console.log
   return (
@@ -43,7 +42,7 @@ const Total = (props) => {
   return (
     <div> 
       <p>
-      Number of exercises {props.total} 
+      Number of exercises {props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises} 
       </p>
     </div>
   )
@@ -52,6 +51,7 @@ const Total = (props) => {
 
 
 const App = () => {
+  
   
   const course = {
     name: 'Half Stack application development',
@@ -79,9 +79,10 @@ const App = () => {
       parts = {course.parts} 
       />
 
-      <Total total = {course.parts[0].exercises + course.parts[1].exercises + course.parts[2].exercises} />
+      <Total parts = {course.parts} />
       </div>
   )
 }
 
 export default App
+
